@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Blogs" %>
+
+<h1>Blogs</h1>
+
+<div id="blogs">
+  <% @blogs.each do |blog| %>
+    <%= render blog %>
+    <p>
+      <%= link_to "Show this blog", blog %>
+      <%= link_to 'edit',edit_blog_path(blog)%>
+      <%= link_to 'Delete post',method: :delete, data:{confirm:'Are you sure'}%>
+      <%=link_to blog.status, toggle_status_blog_path(blog)%>
+
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New blog", new_blog_path %>

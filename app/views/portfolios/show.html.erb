@@ -1,0 +1,12 @@
+<%# Display the main image if attached %>
+<% if @portfolio_item.main_image.present? %>
+  <%= image_tag @portfolio_item.main_image, alt: "Portfolio Image", class: "img-fluid" %>
+<% end %>
+<h1><%= @portfolio_item.title %></h1>
+<em><%= @portfolio_item.subtitle %></em>
+<p><%= @portfolio_item.body %></p>
+
+<h2>Technologies Used:</h2>
+<%@portfolio_item.technologies.each do|t|%>
+<p><%= t.name %></p>
+<% end %>
