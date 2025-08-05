@@ -4,10 +4,13 @@ class BlogsController < ApplicationController
   # GET /blogs or /blogs.json
   def index
     @blogs = Blog.all
+    @page_title ="My Portfolio Blog"
   end
 
   # GET /blogs/1 or /blogs/1.json
   def show
+    @page_title=@blog.title
+    @seo_keywords =@blog.body
   end
 
   # GET /blogs/new
@@ -75,6 +78,6 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.expect(blog:[ :title, :body, :status ])
+      params.require(blog).permit[ :title, :body, :status ]
     end
 end

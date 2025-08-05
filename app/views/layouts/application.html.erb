@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Blog Portfolio" %></title>
+    <title><%= @page_title %></title>
+    <meta name="keywords" content="<%= @seo_keywords %>">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -33,6 +34,14 @@
       <%= link_to "Register",new_user_registration_path %>
       <%= link_to "Login",new_user_session_path %>
     <% end %>
+
+    <div>
+      <div><%=link_to "Home", root_path %></div>
+      <div><%=link_to "About", about_path %></div>
+      <div><%=link_to "Contact", contact_path %></div>
+      <div><%=link_to "Blog", blogs_path %></div>
+      <div><%=link_to "portfolio", portfolios_path %></div>
+    </div>
     <%= yield %>
     <% if session[:source]%>
     <p>Thanks for visiting me from <%=session[:source]%></p>
