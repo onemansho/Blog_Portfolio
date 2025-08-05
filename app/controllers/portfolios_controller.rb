@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+  layout 'portfolio'
   def index
     @portfolios= Portfolio.all#where(subtitle:"Angular")
   end
