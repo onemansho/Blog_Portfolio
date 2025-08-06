@@ -1,3 +1,5 @@
+require 'ostruct'
+
 module CurrentUserConcern
     extend ActiveSupport::Concern
 

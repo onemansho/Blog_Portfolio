@@ -28,13 +28,12 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
+
     <%= login_helper %>   
     <%= render "shared/nav" , location: 'top'%>
 
     <%= yield %>
-    <% if session[:source]%>
-    <p>Thanks for visiting me from <%=session[:source]%></p>
-    <%end%>
+
+    <%= source_helper("portfolio") %>
   </body>
 </html>
