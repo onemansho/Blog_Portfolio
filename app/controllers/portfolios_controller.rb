@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+  before_action :set_portfolio_item, only: %i[ show edit update destroy]
   layout 'portfolio'
   def index
     @portfolios= Portfolio.all#where(subtitle:"Angular")
@@ -8,8 +9,8 @@ class PortfoliosController < ApplicationController
   end
   
   def new
-    @portfolio_item = Portfolio.new
-    3.times {@portfolio_item.technologies.build
+    @portfolio = Portfolio.new
+    3.times {@portfolio.technologies.build
   }
     
   end
@@ -26,10 +27,8 @@ class PortfoliosController < ApplicationController
     end
   end
   def edit
-    @portfolio_item=Portfolio.find(params[:id])
   end
   def update 
-    @portfolio=Portfolio.find(params[:id])
     respond_to do |format|
       if @portfolio.update(portfolio_params)
         format.html { redirect_to portfolios_path, notices: "Your portfolio item is now updated"}
@@ -39,10 +38,8 @@ class PortfoliosController < ApplicationController
     end
   end
   def show
-    @portfolio_item=Portfolio.find(params[:id])
   end
   def destroy
-    @portfolio = Portfolio.find(params[:id])
 
     @portfolio.destroy
 
@@ -59,6 +56,9 @@ class PortfoliosController < ApplicationController
                                       :body,
                                       technologies_attributes: [:name])
   end
+  def set_portfolio_item
+    @portfolio = Portfolio.find(params[:id])
 
+  end
   
 end

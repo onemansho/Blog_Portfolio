@@ -4,7 +4,8 @@ class BlogsController < ApplicationController
 
   # GET /blogs or /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.special_blogs
+    puts @blogs.inspect
     @page_title ="My Portfolio Blog"
   end
 
