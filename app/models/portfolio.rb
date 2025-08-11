@@ -6,7 +6,7 @@ class Portfolio < ApplicationRecord
  validates_presence_of :title, :subtitle, :body, :main_image,:thumb_image
 
  def self.angular
-  where(subtitile:"Angular")
+  where(subtitle:"Angular")
  end
  scope :ruby_on_rails_protfolio_items, ->{where(subtitle: 'Ruby on Rails')}
  
