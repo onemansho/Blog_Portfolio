@@ -5,3 +5,8 @@ import "@rails/ujs"
 Rails.start()
 
 // import "bootstrap";
+
+// Import jQuery
+import "jquery"
+// Import HTML sortable
+import "html.sortable"
