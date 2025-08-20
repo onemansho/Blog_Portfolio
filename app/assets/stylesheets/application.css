@@ -72,3 +72,13 @@ body {
 .auth-links a{
  color:  black;
 }
+.register-text {
+  text-align: center;
+  margin-top: 1rem;
+}
+.login > .card {
+  width: 22rem;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+}
