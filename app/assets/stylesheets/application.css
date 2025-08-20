@@ -64,3 +64,11 @@ body {
   border-bottom-color: #fff;
 }
 
+.card-body {
+  color: black;
+  text-align: left;
+}
+
+.auth-links a{
+ color:  black;
+}
