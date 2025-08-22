@@ -36,7 +36,7 @@ module ApplicationHelper
     #How can i pass specific data to the view -->
     def source_helper(layout_name)
         if session[:source] 
-          greeting = "Thanks for visiting me from #{session[:source]} and you are on the #{layout_name}"
+          greeting = "Thanks for visiting me from #{session[:source]} and you are on the #{layout_name} layout"
          content_tag(:p , greeting, class: "source-greeting")
         end   
   end

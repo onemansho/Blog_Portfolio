@@ -14,8 +14,15 @@
  * Globals
  */
 
+/*
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+*/
 
-/* Custom default button */
+
+
+ /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
