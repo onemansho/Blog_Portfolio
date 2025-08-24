@@ -1,12 +1,20 @@
-<%# Display the main image if attached %>
-<% if @portfolio.main_image.present? %>
-  <%= image_tag @portfolio.main_image, alt: "Portfolio Image", class: "img-fluid" %>
-<% end %>
-<h1><%= @portfolio.title %></h1>
-<em><%= @portfolio.subtitle %></em>
-<p><%= @portfolio.body %></p>
-
-<h2>Technologies Used:</h2>
-<%@portfolio.technologies.each do|t|%>
-<p><%= t.name %></p>
-<% end %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <% if @portfolio.main_image.present? %>
+        <%= image_tag @portfolio.main_image, alt: "Portfolio Image", class: "img-fluid rounded shadow" %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h1 class="display-4"><%= @portfolio.title %></h1>
+      <em class="text-muted h5"><%= @portfolio.subtitle %></em>
+      <p class="mt-4"><%= @portfolio.body %></p>
+      <h2 class="mt-5">Technologies Used:</h2>
+      <div class="mb-4">
+        <% @portfolio.technologies.each do |t| %>
+          <span class="badge badge-pill badge-info mr-2 mb-2 px-3 py-2"><%= t.name %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
