@@ -21,14 +21,14 @@ module ApplicationHelper
     else
       # Use link_to with method: :delete for consistent styling with other nav links
       
-      button_to(
-        "Logout",
-        destroy_user_session_path,
-        method: :delete,
-        form: { class: "d-inline" },
-        class: "btn btn-link nav-link p-0 lgt",
-        data: { turbo_confirm: "Are you sure you want to log out?" }
-      )
+        button_to(
+          "Logout",
+          destroy_user_session_path,
+          method: :delete,
+          form: { class: "d-inline" },
+          class: "btn btn-link nav-link p-0 lgt",
+          data: { turbo_confirm: "Are you sure you want to log out?" }
+        )
     end
   end
   

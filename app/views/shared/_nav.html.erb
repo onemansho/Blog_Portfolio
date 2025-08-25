@@ -1,9 +1,5 @@
-<nav class="nav nav-masthead justify-content-center float-md-end">
-  <%= link_to "Home", root_path, class: "nav-link text-Blue" %>
-  <%= link_to "About", about_path, class: "nav-link text-Blue" %>
-  <%= link_to "Contact", contact_path, class: "nav-link text-Blue" %>
-  <%= link_to "Blog", blogs_path, class: "nav-link text-Blue" %>
-  <%= link_to "Portfolio", portfolios_path, class: "nav-link text-Blue" %>
+<nav class="nav nav-masthead justify-content-center float-md-end app-nav">
+  <%=  nav_helper 'nav-link','span'  %>
   <%= login_helper %>
 </nav>
       
