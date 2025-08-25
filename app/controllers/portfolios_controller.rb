@@ -1,4 +1,8 @@
 class PortfoliosController < ApplicationController
+  before_action :set_portfolio_item, only: %i[ show edit update destroy]
+  layout 'portfolio'
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+
   def index
     @portfolios= Portfolio.all#where(subtitle:"Angular")
   end
@@ -7,13 +11,13 @@ class PortfoliosController < ApplicationController
   end
   
   def new
-    @portfolio_item = Portfolio.new
-    3.times {@portfolio_item.technologies.build
+    @portfolio = Portfolio.new
+    3.times {@portfolio.technologies.build
   }
     
   end
   def create
-    @portfolios = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
+    @portfolios = Portfolio.new(portfolio_params)
 
     respond_to do |format|
       if @portfolios.save
@@ -25,19 +29,38 @@ class PortfoliosController < ApplicationController
     end
   end
   def edit
-    @portfolios=Portfolio.find(params[:id])
+  end
+  def update 
+    respond_to do |format|
+      if @portfolio.update(portfolio_params)
+        format.html { redirect_to portfolios_path, notices: "Your portfolio item is now updated"}
+      else
+        format.html {render :edit}
+      end
+    end
   end
   def show
-    @portfolio_item=Portfolio.find(params[:id])
   end
   def destroy
-    @portfolio = Portfolio.find(params[:id])
 
     @portfolio.destroy
 
     respond_to do |format|
       format.html {redirect_to portfolios_url,notice:'Record was removed'}
     end
+  end
+
+  private 
+
+  def portfolio_params
+    params.require(:portfolio).permit(:title, 
+                                      :subtitle, 
+                                      :body,
+                                      technologies_attributes: [:name])
+  end
+  def set_portfolio_item
+    @portfolio = Portfolio.find(params[:id])
+
   end
   
 end

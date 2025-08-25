@@ -1,2 +1,20 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<h1 class='text-white'>contact</h1>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <h3>Office address</h2>
+        <p>OctaScale technologies</p>
+        <h3>Phone</h3>
+        <p><%=number_to_phone "5555555555"%></p>
+        <h3>Email</h3>
+
+    </div>
+    <div class="col-md-6">
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1801.631660358874!2d81.80430538677967!3d25.429458667281914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398535b8b8deb41f%3A0xdf785e9d673e5a2f!2sOctaScale%20Technologies%20Private%20Limited!5e0!3m2!1sen!2sin!4v1755632202725!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+<%# <p><%=number_to_phone "5555555555"</p>  %>
+<%# <p><%=number_to_currency "5555555555"</p>  %>
+<%# <p><%=number_to_percentage "80.4"%>
+<%# <p><%=number_with_delimiter "123456789"%>

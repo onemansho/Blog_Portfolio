@@ -1,2 +1,5 @@
-<h1>Hi <%=current_user.first_name if current_user %>    </h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1 class='text-white'>Welcome.</h1>
+<p class="lead">Software development is not a secret process, When i take on a new project i made it my goal to not only deliver a well crafted product but to also ensure that each stage of the process is fully communicated .</p>
+<p class="lead">
+  <%= link_to "About me", about_path, class: "btn btn-lg btn-secondary fw-bold border-white bg-black" %>
+</p>
