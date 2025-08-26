@@ -1,12 +1,14 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "controllers"
-import "@rails/ujs"
+import Rails from "@rails/ujs"
 Rails.start()
 
-// import "bootstrap";
+import "@hotwired/turbo-rails"
+import "controllers"
 
-// Import jQuery
-import "jquery"
+// Import jQuery and expose globally
+import jquery from "jquery"
+window.$ = jquery
+window.jQuery = jquery
+
 // Import HTML sortable
-import "html.sortable"
+import "html5sortable"
