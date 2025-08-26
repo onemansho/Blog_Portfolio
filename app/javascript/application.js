@@ -9,6 +9,8 @@ import "controllers"
 import jquery from "jquery"
 window.$ = jquery
 window.jQuery = jquery
+import "jquery-ui"
+
 
 // Import HTML sortable
 import "html5sortable"
