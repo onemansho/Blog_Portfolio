@@ -26,7 +26,6 @@
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
-  color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
 }
 
@@ -99,4 +98,19 @@ body {
   background: #f0f0f0;
   border: 2px dashed #ccc;
   min-height: 150px;
+}
+
+#background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url('home_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
