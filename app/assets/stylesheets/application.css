@@ -94,3 +94,9 @@ body {
   margin-left: 15px;
   margin-right: 15px;
 }
+
+.sortable-placeholder {
+  background: #f0f0f0;
+  border: 2px dashed #ccc;
+  min-height: 150px;
+}

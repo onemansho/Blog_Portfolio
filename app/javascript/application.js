@@ -13,4 +13,6 @@ import "jquery-ui"
 
 
 // Import HTML sortable
-import "html5sortable"
+import html5sortable from "../assets/javascripts/html5sortable.js";
+import "../assets/javascripts/portfolio.js";
+
