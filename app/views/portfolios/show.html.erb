@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-md-6 mb-4">
       <% if @portfolio.main_image.present? %>
-        <%= image_tag @portfolio.main_image, alt: "Portfolio Image", class: "img-fluid rounded shadow" %>
+        <%= image_tag @portfolio.main_image.url, alt: "Portfolio Image", class: "img-fluid rounded shadow" %>
+
       <% end %>
     </div>
     <div class="col-md-6">
