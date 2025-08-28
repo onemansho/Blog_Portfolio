@@ -1,10 +1,9 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-md-6 mb-4">
-      <% if @portfolio.main_image.present? %>
-        <%= image_tag @portfolio.main_image.url, alt: "Portfolio Image", class: "img-fluid rounded shadow" %>
+      
+        <%= image_tag portfolio_img(@portfolio.thumb_image, 'main'), class: "img-fluid rounded shadow" %>
 
-      <% end %>
     </div>
     <div class="col-md-6">
       <h1 class="display-4"><%= @portfolio.title %></h1>
